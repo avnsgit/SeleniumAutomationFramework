@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite data-provider-thread-count="3" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.avi.listners.ListnerClass"/>
+    <listener class-name="com.avi.listners.MethodInterceptor"/>
+    <listener class-name="com.avi.listners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" parallel="methods" name="Test(failed)">
+    <classes>
+      <class name="com.avi.tests.OrangeHRMTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="loginLogoutTest" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- com.avi.tests.OrangeHRMTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
